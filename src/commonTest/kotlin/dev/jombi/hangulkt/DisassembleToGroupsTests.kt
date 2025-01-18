@@ -7,9 +7,8 @@ import kotlin.test.assertEquals
 class DisassembleToGroupsTests {
     @Test
     fun `테스트를 통과해야한다`() {
-        assertEquals(disassembleToGroups("값"), listOf(listOf('ㄱ', 'ㅏ', 'ㅂ', 'ㅅ')))
+        assertEquals(listOf(listOf('ㄱ', 'ㅏ', 'ㅂ', 'ㅅ')), disassembleToGroups("값"))
         assertEquals(
-            disassembleToGroups("값이 비싸다"),
             listOf(
                 listOf('ㄱ', 'ㅏ', 'ㅂ', 'ㅅ'),
                 listOf('ㅇ', 'ㅣ'),
@@ -17,30 +16,31 @@ class DisassembleToGroupsTests {
                 listOf('ㅂ', 'ㅣ'),
                 listOf('ㅆ', 'ㅏ'),
                 listOf('ㄷ', 'ㅏ'),
-            )
+            ),
+            disassembleToGroups("값이 비싸다")
         )
         assertEquals(
-            disassembleToGroups("사과 짱"),
             listOf(
                 listOf('ㅅ', 'ㅏ'),
                 listOf('ㄱ', 'ㅗ', 'ㅏ'),
                 listOf(' '),
                 listOf('ㅉ', 'ㅏ', 'ㅇ'),
-            )
+            ),
+            disassembleToGroups("사과 짱")
         )
 
         assertEquals(
-            disassembleToGroups("ㄵ"),
             listOf(
                 listOf('ㄴ', 'ㅈ'),
-            )
+            ),
+            disassembleToGroups("ㄵ"),
         )
-        
+
         assertEquals(
-            disassembleToGroups("ㅘ"),
             listOf(
                 listOf('ㅗ', 'ㅏ'),
-            )
+            ),
+            disassembleToGroups("ㅘ")
         )
     }
 }

@@ -8,20 +8,19 @@ import kotlin.test.assertFailsWith
 class CombineCharacterTests {
     @Test
     fun `종성으로 겹받침으로 구성될 수 있는 문자 두 개를 받으면 겹받침을 생성한다`() {
-        val result = combineCharacter('ㄱ', "ㅏ", "ㅂㅅ")
-        assertEquals(result, '값')
+        assertEquals('값', combineCharacter('ㄱ', "ㅏ", "ㅂㅅ"))
     }
     
     @Test
     fun `종성이 입력되지 않았다면 받침이 없는 문자로 합성한다`() {
-        assertEquals(combineCharacter('ㅌ', 'ㅗ'), '토')
-        assertEquals(combineCharacter('ㄲ', "ㅑ"), '꺄')
+        assertEquals('토', combineCharacter('ㅌ', 'ㅗ'), )
+        assertEquals('꺄', combineCharacter('ㄲ', "ㅑ"), )
     }
     
     @Test
     fun `종성이 입력되었다면 받침을 추가한다`() {
-        assertEquals(combineCharacter('ㅌ', 'ㅗ', 'ㅅ'), '톳')
-        assertEquals(combineCharacter('ㅌ', "ㅏ", "ㄱ"), '탁')
+        assertEquals('톳', combineCharacter('ㅌ', 'ㅗ', 'ㅅ'), )
+        assertEquals('탁', combineCharacter('ㅌ', "ㅏ", "ㄱ"), )
     }
     
     @Test
