@@ -1,9 +1,11 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     kotlin("multiplatform")// version "2.1.0"
     id("cinterop")
     id("targets")
 
-    `maven-publish`
+    id("com.vanniktech.maven.publish") version "0.30.0"
 }
 
 kotlin {
@@ -30,53 +32,43 @@ repositories {
 }
 
 kotlin {
-    jvmToolchain(8)
+    jvmToolchain(11)
 }
 
 val javadocJar by tasks.registering(Jar::class) {
     archiveClassifier.set("javadoc")
 }
 
-publishing {
-    publications.withType<MavenPublication> {
-        val pomDescription = "KMP Port of es-hangul library"
-        val pomUrl = "https://github.com/jombidev/hangul-kt"
-        val pomLicenseName: String by project
-        val pomLicenseUrl: String by project
-        val pomScmUrl: String by project
-        val pomScmConnection: String by project
-        val pomScmDeveloperConnection: String by project
-        val pomDeveloperId: String by project
-        val pomDeveloperName: String by project
 
-        // Publish docs with each artifact.
-        artifact(javadocJar)
-
-        // Provide information requited by Maven Central.
-        pom {
-            name.set(rootProject.name)
-            description.set(pomDescription)
-            url.set(pomUrl)
-
-            licenses {
-                license {
-                    name.set(pomLicenseName)
-                    url.set(pomLicenseUrl)
-                }
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    signAllPublications()
+    coordinates(group.toString(), rootProject.name, version.toString())
+    
+    pom {
+        name = rootProject.name
+        description = "A Kotlin Ported-library for handling Hangul characters."
+        url = "https://github.com/jombidev/hangul-kt"
+        
+        licenses {
+            license {
+                name = "MIT"
+                url = "https://opensource.org/licenses/MIT"
             }
-
-            scm {
-                url.set(pomScmUrl)
-                connection.set(pomScmConnection)
-                developerConnection.set(pomScmDeveloperConnection)
+        }
+        
+        developers { 
+            developer {
+                id = "jombidev"
+                name = "Jombi"
+                url = "https://jombi.dev"
             }
-
-            developers {
-                developer {
-                    id.set(pomDeveloperId)
-                    name.set(pomDeveloperName)
-                }
-            }
+        }
+        
+        scm {
+            url = "https://github.com/jombidev/hangul-kt"
+            connection = "scm:git:git://github.com/jombidev/hangul-kt.git"
+            developerConnection = "scm:git:ssh://git@github.com/jombidev/hangul-kt.git"
         }
     }
 }
