@@ -4,7 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
-@Suppress("NonAsciiCharacters")
+@Suppress("NonAsciiCharacters", "DEPRECATION")
 class AmountToHangulTests {
     @Test
     fun `금액 문자열을 한글로 표기`() {
