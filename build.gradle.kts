@@ -38,6 +38,7 @@ kotlin {
         }
         
         commonMain.dependencies {
+            implementation("com.ionspin.kotlin:bignum:0.3.10")
             implementation("com.doist.x:normalize:1.1.1")
         }
         
