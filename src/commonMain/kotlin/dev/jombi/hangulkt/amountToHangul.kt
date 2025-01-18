@@ -5,16 +5,33 @@ import com.ionspin.kotlin.bignum.decimal.toBigDecimal
 
 private val NOT_NUMBER = Regex("[^\\d.]+")
 
+@Suppress("DEPRECATION")
+@Deprecated(
+    "더 유연하게 사용 가능한 `numberToHangul`을 이용해 주세요",
+    replaceWith = ReplaceWith("numberToHangul(amount)", "dev.jombi.hangulkt.numberToHangul"),
+    DeprecationLevel.WARNING
+)
 public fun amountToHangul(amount: String): String {
     val strip = NOT_NUMBER.replace(amount, "")
     if (strip.isEmpty()) return ""
     return amountToHangul(strip.toBigDecimal())
 }
 
+@Suppress("DEPRECATION")
+@Deprecated(
+    "더 유연하게 사용 가능한 `numberToHangul`을 이용해 주세요",
+    replaceWith = ReplaceWith("numberToHangul(amount)", "dev.jombi.hangulkt.numberToHangul"),
+    DeprecationLevel.WARNING
+)
 public fun amountToHangul(amount: Number): String {
     return amountToHangul(BigDecimal.fromDouble(amount.toDouble()))
 }
 
+@Deprecated(
+    "더 유연하게 사용 가능한 `numberToHangul`을 이용해 주세요",
+    replaceWith = ReplaceWith("numberToHangul(amount)", "dev.jombi.hangulkt.numberToHangul"),
+    DeprecationLevel.WARNING
+)
 public fun amountToHangul(amount: BigDecimal): String {
     val rawSplitNum = amount.toPlainString().split('.')
 
@@ -57,12 +74,12 @@ public fun amountToHangul(amount: BigDecimal): String {
         }
         result.add(Constants.HANGUL_NUMBERS[intPart[intPart.length - 1].digitToInt()].toString())
     }
-    
+
     if (decPart != null) {
         result.add("점")
         for (i in decPart.indices)
             result.add(Constants.HANGUL_NUMBERS_FOR_DECIMAL[decPart[i].digitToInt()].toString())
     }
-    
+
     return result.joinToString("").replace("\u0000", "") // remove null char
 }
