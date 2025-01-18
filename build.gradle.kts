@@ -1,9 +1,7 @@
 import com.vanniktech.maven.publish.SonatypeHost
 
 plugins {
-    kotlin("multiplatform")// version "2.1.0"
-    id("cinterop")
-    id("targets")
+    kotlin("multiplatform") version "2.1.0"
 
     id("com.vanniktech.maven.publish") version "0.30.0"
 }
@@ -11,15 +9,40 @@ plugins {
 kotlin {
     explicitApi()
     
+    jvm() 
+    
+    mingwX64()
+    
+    watchosX64()
+    watchosArm32()
+    watchosArm64()
+    watchosSimulatorArm64()
+    
+    tvosX64()
+    tvosArm64()
+    tvosSimulatorArm64()
+    
+    macosX64()
+    macosArm64()
+    
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
+    
+    linuxX64()
+    linuxArm64()
+    
     sourceSets {
         all {
             languageSettings.optIn("kotlinx.cinterop.ExperimentalForeignApi")
         }
         
-        val commonTest by getting {
-            dependencies { 
-                implementation(kotlin("test"))
-            }
+        commonMain.dependencies {
+            implementation("com.doist.x:normalize:1.1.1")
+        }
+        
+        commonTest.dependencies { 
+            implementation(kotlin("test"))
         }
     }
 }
@@ -32,7 +55,7 @@ repositories {
 }
 
 kotlin {
-    jvmToolchain(11)
+    jvmToolchain(17)
 }
 
 val javadocJar by tasks.registering(Jar::class) {

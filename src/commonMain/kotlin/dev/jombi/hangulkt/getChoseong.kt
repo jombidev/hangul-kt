@@ -1,6 +1,8 @@
 package dev.jombi.hangulkt
 
-import dev.jombi.normalize.*
+import doist.x.normalize.Form
+import doist.x.normalize.normalize
+
 
 public fun getChoseong(word: String): String {
     return word.normalize(Form.NFD)
