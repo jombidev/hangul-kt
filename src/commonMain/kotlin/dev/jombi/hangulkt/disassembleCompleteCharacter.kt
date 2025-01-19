@@ -1,6 +1,8 @@
 package dev.jombi.hangulkt
 
-public fun disassembleCompleteCharacter(letter: Char): Triple<Char, String, String>? {
+import dev.jombi.hangulkt.hangul.HangulChar
+
+public fun disassembleCompleteCharacter(letter: Char): HangulChar? {
     val charCode = letter.code
 
     val isCompleteHangul = Constants.COMPLETE_HANGUL_START_CODE <= charCode && charCode <= Constants.COMPLETE_HANGUL_END_CODE
@@ -15,7 +17,7 @@ public fun disassembleCompleteCharacter(letter: Char): Triple<Char, String, Stri
     val choseongIndex = (hangulCode - jongseongIndex) / Constants.NUMBER_OF_JONGSEONG / Constants.NUMBER_OF_JUNGSEONG
 
     
-    return Triple(
+    return HangulChar(
         Constants.CHOSEONGS[choseongIndex],
         Constants.JUNGSEONGS[jungseongIndex],
         Constants.JONGSEONGS[jongseongIndex],
