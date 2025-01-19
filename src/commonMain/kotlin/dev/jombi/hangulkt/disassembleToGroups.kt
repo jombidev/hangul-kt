@@ -5,7 +5,7 @@ public fun disassembleToGroups(str: String): List<List<Char>> {
 }
 
 public fun disassembleToGroup(char: Char): List<Char> =
-    disassembleCompleteCharacter(char)?.let { listOf(it.first) + it.second.toList() + it.third.toList() }
+    disassembleCompleteCharacter(char)?.let { listOf(it.choseong) + it.jungseong.toList() + it.jongseong.toList() }
         ?: Constants.DISASSEMBLED_CONSONANTS_BY_CONSONANT[char]?.toList()
         ?: Constants.DISASSEMBLED_VOWELS_BY_VOWEL[char]?.toList()
         ?: listOf(char)
