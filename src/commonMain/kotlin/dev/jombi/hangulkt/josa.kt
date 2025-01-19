@@ -38,7 +38,7 @@ public fun josaPicker(word: String, josa: JosaOption): String {
     val has받침 = hasBatchim(word)
     var index = if (has받침) josa::left else josa::right
     
-    val is종성ㄹ = has받침 && disassembleCompleteCharacter(word[word.length - 1])?.third === "ㄹ"
+    val is종성ㄹ = has받침 && disassembleCompleteCharacter(word[word.length - 1])?.jongseong == "ㄹ"
 
     val isCaseOf로 = has받침 && is종성ㄹ && josa in 로_조사
 
