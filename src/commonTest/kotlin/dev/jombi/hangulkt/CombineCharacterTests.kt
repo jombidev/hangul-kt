@@ -13,14 +13,14 @@ class CombineCharacterTests {
     
     @Test
     fun `종성이 입력되지 않았다면 받침이 없는 문자로 합성한다`() {
-        assertEquals('토', combineCharacter('ㅌ', 'ㅗ'), )
-        assertEquals('꺄', combineCharacter('ㄲ', "ㅑ"), )
+        assertEquals('토', combineCharacter('ㅌ', 'ㅗ'))
+        assertEquals('꺄', combineCharacter('ㄲ', "ㅑ"))
     }
     
     @Test
     fun `종성이 입력되었다면 받침을 추가한다`() {
-        assertEquals('톳', combineCharacter('ㅌ', 'ㅗ', 'ㅅ'), )
-        assertEquals('탁', combineCharacter('ㅌ', "ㅏ", "ㄱ"), )
+        assertEquals('톳', combineCharacter('ㅌ', 'ㅗ', 'ㅅ'))
+        assertEquals('탁', combineCharacter('ㅌ', "ㅏ", "ㄱ"))
     }
     
     @Test
