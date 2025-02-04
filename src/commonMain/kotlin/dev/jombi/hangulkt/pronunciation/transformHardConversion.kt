@@ -3,6 +3,7 @@
 package dev.jombi.hangulkt.pronunciation
 
 import dev.jombi.hangulkt.hangul.HangulChar
+import dev.jombi.hangulkt.hangul.toMutable
 
 /**
  * 제6장 경음화를 적용합니다.
@@ -17,15 +18,16 @@ public fun transformHardConversion(
     currentSyllable: HangulChar,
     nextSyllable: HangulChar,
 ): HangulChar {
-    var next = nextSyllable
+    val next = nextSyllable.toMutable()
+
     if (next.choseong in PronounConstants.된소리) {
         val 제23항조건 = currentSyllable.jongseong in PronounConstants.된소리_받침
         val 제24_25항조건 = currentSyllable.jongseong in PronounConstants.어간_받침 && next.choseong != 'ㅂ'
 
         if (제23항조건 || 제24_25항조건) {
-            next = next.copy(choseong = PronounConstants.된소리[next.choseong]!!) // validated by if statement
+            next.choseong = PronounConstants.된소리[next.choseong]!! // validated by if statement
         }
     }
 
-    return next
+    return next.value
 }
