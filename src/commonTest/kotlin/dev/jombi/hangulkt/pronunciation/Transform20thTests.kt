@@ -17,7 +17,7 @@ class Transform20thTests {
 
         assertEquals(
             HangulChar('ㄴ', "ㅏ", "ㄹ") to HangulChar('ㄹ', "ㅗ"),
-            transform20th(current, next)
+            Transform20(current, next)
         )
     }
 
@@ -31,7 +31,7 @@ class Transform20thTests {
 
         assertEquals(
             HangulChar('ㄷ', "ㅏ", "ㄹㅎ") to HangulChar('ㄹ', "ㅡ", "ㄴ"),
-            transform20th(current, next)
+            Transform20(current, next)
         )
     }
 }

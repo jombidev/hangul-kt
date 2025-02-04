@@ -19,7 +19,7 @@ class Transform16thTests {
 
         assertEquals(
             HangulChar('ㄱ', "ㅡ") to HangulChar('ㅅ', "ㅣ"),
-            transform16th(current, next, phrase, index)
+            Transform16(current, next, phrase, index)
         )
     }
 
@@ -35,7 +35,7 @@ class Transform16thTests {
 
         assertEquals(
             HangulChar('ㅇ', "ㅕ") to HangulChar('ㄱ', "ㅣ"),
-            transform16th(current, next, phrase, index)
+            Transform16(current, next, phrase, index)
         )
     }
 }

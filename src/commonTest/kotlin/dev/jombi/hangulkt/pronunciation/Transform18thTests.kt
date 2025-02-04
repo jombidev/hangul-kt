@@ -17,7 +17,7 @@ class Transform18thTests {
         
         assertEquals(
             HangulChar('ㅁ', "ㅓ", "ㅇ"),
-            transform18th(current, next)
+            Transform18(current, next).first
         )
     }
     
@@ -31,7 +31,7 @@ class Transform18thTests {
         
         assertEquals(
             HangulChar('ㄷ', "ㅏ", "ㄴ"),
-            transform18th(current, next)
+            Transform18(current, next).first
         )
     }
     
@@ -45,7 +45,7 @@ class Transform18thTests {
         
         assertEquals(
             HangulChar('ㅈ', "ㅏ", "ㅁ"),
-            transform18th(current, next)
+            Transform18(current, next).first
         )
     }
 }

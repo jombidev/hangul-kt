@@ -17,7 +17,7 @@ class TransformNLAssimilationTests {
 
         assertEquals(
             HangulChar('ㅁ', "ㅐ", "ㄴ") to HangulChar('ㄴ', "ㅣ", "ㅂ"),
-            transformNLAssimilation(current, next)
+            TransformNLAssimilation(current, next)
         )
     }
 
@@ -31,7 +31,7 @@ class TransformNLAssimilationTests {
 
         assertEquals(
             HangulChar('ㅇ', "ㅏ", "ㄹ") to HangulChar('ㄹ', "ㅑ", "ㄱ"),
-            transformNLAssimilation(current, next)
+            TransformNLAssimilation(current, next)
         )
     }
 
@@ -45,7 +45,7 @@ class TransformNLAssimilationTests {
 
         assertEquals(
             HangulChar('ㅇ', "ㅑ", "ㅇ") to HangulChar('ㅇ', "ㅣ"),
-            transformNLAssimilation(current, next)
+            TransformNLAssimilation(current, next)
         )
     }
 }

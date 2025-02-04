@@ -14,7 +14,7 @@ class Transform9And10And11thTests {
         
         assertNotNull(current)
         
-        assertEquals(HangulChar('ㄷ', "ㅏ", "ㄱ"), transform9And10And11th(current, next))
+        assertEquals(HangulChar('ㄷ', "ㅏ", "ㄱ"), Transform9And10And11(current, next).first)
     }
     
     @Test
@@ -24,7 +24,7 @@ class Transform9And10And11thTests {
         
         assertNotNull(current)
         
-        assertEquals(HangulChar('ㅇ', "ㅏ", "ㄴ"), transform9And10And11th(current, next))
+        assertEquals(HangulChar('ㅇ', "ㅏ", "ㄴ"), Transform9And10And11(current, next).first)
     }
     
     @Test
@@ -34,6 +34,6 @@ class Transform9And10And11thTests {
         
         assertNotNull(current)
         
-        assertEquals(HangulChar('ㅎ', "ㅡ", "ㄱ"), transform9And10And11th(current, next))
+        assertEquals(HangulChar('ㅎ', "ㅡ", "ㄱ"), Transform9And10And11(current, next).first)
     }
 }

@@ -15,7 +15,7 @@ class TransformHardConversionTests {
         assertNotNull(current)
         assertNotNull(next)
 
-        assertEquals(HangulChar('ㅃ', "ㅏ", "ㅂ"), transformHardConversion(current, next))
+        assertEquals(HangulChar('ㅃ', "ㅏ", "ㅂ"), TransformHardConversion(current, next).second)
     }
     
     @Test
@@ -26,7 +26,7 @@ class TransformHardConversionTests {
         assertNotNull(current)
         assertNotNull(next)
         
-        assertEquals(HangulChar('ㄲ', "ㅗ"), transformHardConversion(current, next))
+        assertEquals(HangulChar('ㄲ', "ㅗ"), TransformHardConversion(current, next).second)
     }
     
     @Test
@@ -37,6 +37,6 @@ class TransformHardConversionTests {
         assertNotNull(current)
         assertNotNull(next)
 
-        assertEquals(HangulChar('ㄲ', "ㅔ"), transformHardConversion(current, next))
+        assertEquals(HangulChar('ㄲ', "ㅔ"), TransformHardConversion(current, next).second)
     }
 }

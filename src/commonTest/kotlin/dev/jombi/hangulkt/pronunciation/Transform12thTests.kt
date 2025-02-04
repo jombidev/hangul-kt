@@ -17,7 +17,7 @@ class Transform12thTests {
         
         assertEquals(
             HangulChar('ㄴ', "ㅗ") to HangulChar('ㅋ', "ㅗ"),
-            transform12th(current, next)
+            Transform12(current, next)
         )
     }
     
@@ -31,7 +31,7 @@ class Transform12thTests {
         
         assertEquals(
             HangulChar('ㄱ', "ㅏ") to HangulChar('ㅋ', "ㅏ"),
-            transform12th(current, next)
+            Transform12(current, next)
         )
     }
     
@@ -45,7 +45,7 @@ class Transform12thTests {
         
         assertEquals(
             HangulChar('ㄷ', "ㅏ") to HangulChar('ㅆ', "ㅗ"),
-            transform12th(current, next)
+            Transform12(current, next)
         )
     }
     
@@ -59,7 +59,7 @@ class Transform12thTests {
         
         assertEquals(
             HangulChar('ㄴ', "ㅗ") to HangulChar('ㄴ', "ㅡ", "ㄴ"),
-            transform12th(current, next)
+            Transform12(current, next)
         )
     }
     
@@ -73,7 +73,7 @@ class Transform12thTests {
         
         assertEquals(
             HangulChar('ㅇ', "ㅏ", "ㄴ") to HangulChar('ㄴ', "ㅔ"),
-            transform12th(current, next)
+            Transform12(current, next)
         )
     }
     
@@ -87,7 +87,7 @@ class Transform12thTests {
         
         assertEquals(
             HangulChar('ㄴ', "ㅏ") to HangulChar('ㅇ', "ㅡ", "ㄴ"),
-            transform12th(current, next)
+            Transform12(current, next)
         )
     }
     
@@ -100,7 +100,7 @@ class Transform12thTests {
         
         assertEquals(
             HangulChar('ㅁ', "ㅏ", "ㄴ") to null,
-            transform12th(current, next)
+            Transform12(current, next)
         )
     }
 }
