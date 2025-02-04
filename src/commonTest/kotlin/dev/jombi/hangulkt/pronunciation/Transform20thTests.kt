@@ -20,7 +20,7 @@ class Transform20thTests {
             transform20th(current, next)
         )
     }
-    
+
     @Test
     fun `첫소리 'ㄴ'이 'ㅀ' 또는 'ㄾ' 뒤에 연결되는 경우에도 'ㄹ'로 발음한다`() {
         val current = disassembleCompleteCharacter('닳')
