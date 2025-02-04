@@ -7,14 +7,14 @@ public object PronounConstants {
 
     public val 한글_자모: List<String> = listOf("기역", "니은", "리을", "미음", "비읍", "시옷", "이응")
     public val 특별한_한글_자모: List<String> = listOf("디귿", "지읒", "치읓", "키읔", "티읕", "피읖", "히읗")
-    public val 특별한_한글_자모의_발음: Map<String, String> = mapOf(
-        "ㄷ" to "ㅅ",
-        "ㅈ" to "ㅅ",
-        "ㅊ" to "ㅅ",
-        "ㅌ" to "ㅅ",
-        "ㅎ" to "ㅅ",
-        "ㅋ" to "ㄱ",
-        "ㅍ" to "ㅂ",
+    public val 특별한_한글_자모의_발음: Map<String, Char> = mapOf(
+        "ㄷ" to 'ㅅ',
+        "ㅈ" to 'ㅅ',
+        "ㅊ" to 'ㅅ',
+        "ㅌ" to 'ㅅ',
+        "ㅎ" to 'ㅅ',
+        "ㅋ" to 'ㄱ',
+        "ㅍ" to 'ㅂ',
     )
 
     // 17항
