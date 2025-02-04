@@ -14,15 +14,13 @@ import dev.jombi.hangulkt.hangul.toMutable
  * @return 18항이 적용되었는지의 여부를 반환합니다.
  */
 public fun transform18th(currentSyllable: HangulChar, nextSyllable: HangulChar): HangulChar {
-    val 제18항주요조건 = currentSyllable.hasJongseong() && nextSyllable.choseong in arrayOf('ㄴ', 'ㅁ')
-    if (!제18항주요조건)
-        return currentSyllable
-
     val current = currentSyllable.toMutable()
-
-    handle비음화ㅇ(current)
-    handle비음화ㄴ(current)
-    handle비음화ㅁ(current)
+    val 제18항주요조건 = currentSyllable.hasJongseong() && nextSyllable.choseong in arrayOf('ㄴ', 'ㅁ')
+    if (제18항주요조건) {
+        handle비음화ㅇ(current)
+        handle비음화ㄴ(current)
+        handle비음화ㅁ(current)
+    }
 
     return current.value
 }

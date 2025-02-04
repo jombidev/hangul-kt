@@ -21,13 +21,12 @@ public fun transform16th(currentSyllable: HangulChar, nextSyllable: HangulChar, 
 
     val 제16항주요조건 = current.hasJongseong() && next.choseong == PronounConstants.음가가_없는_자음
 
-    if (!제16항주요조건)
-        return current and next
+    if (제16항주요조건) {
+        val combinedSyllables = "${phrase[index - 1]}${phrase[index]}"
 
-    val combinedSyllables = "${phrase[index - 1]}${phrase[index]}"
-
-    handleSpecialHangulCharacters(current, next, combinedSyllables)
-    handleHangulCharacters(current, next, combinedSyllables)
+        handleSpecialHangulCharacters(current, next, combinedSyllables)
+        handleHangulCharacters(current, next, combinedSyllables)
+    }
 
     return current and next
 }
