@@ -28,7 +28,7 @@ public fun transform13And14th(currentSyllable: HangulChar, nextSyllable: HangulC
 
     val 제13_14항주요조건 = current.hasJongseong() && next.choseong == PronounConstants.음가가_없는_자음
 
-    if (!제13_14항주요조건) {
+    if (제13_14항주요조건) {
         handle홑받침or쌍받침(current, next)
         handle겹받침(current, next)
     }
