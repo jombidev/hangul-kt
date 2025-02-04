@@ -20,7 +20,7 @@ public fun transform12th(currentSyllable: HangulChar, nextSyllable: HangulChar?)
     var current = currentSyllable
     var next = nextSyllable
 
-    if (current.jongseong.isEmpty())
+    if (!current.hasJongseong())
         return current to next
 
     if (current.jongseong in PronounConstants.발음변환_받침_ㅎ) {
