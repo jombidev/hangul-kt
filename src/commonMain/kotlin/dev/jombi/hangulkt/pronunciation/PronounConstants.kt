@@ -18,10 +18,10 @@ public object PronounConstants {
     )
 
     // 17항
-    public val 음의_동화_받침: Map<String, String> = mapOf(
-        "ㄷ" to "ㅈ",
-        "ㅌ" to "ㅊ",
-        "ㄹㅌ" to "ㅊ",
+    public val 음의_동화_받침: Map<String, Char> = mapOf(
+        "ㄷ" to 'ㅈ',
+        "ㅌ" to 'ㅊ',
+        "ㄹㅌ" to 'ㅊ',
     )
 
     // "ㄴ,ㄹ"이 덧나는 동화작용
