@@ -16,11 +16,7 @@ class Transform13thAnd14thTests {
         assertNotNull(next)
 
         assertEquals(
-            HangulChar(
-                'ㄲ', "ㅏ"
-            ) to HangulChar(
-                'ㄲ', "ㅏ"
-            ),
+            HangulChar('ㄲ', "ㅏ") to HangulChar('ㄲ', "ㅏ"),
             transform13And14th(current, next)
         )
     }
@@ -34,11 +30,7 @@ class Transform13thAnd14thTests {
         assertNotNull(next)
 
         assertEquals(
-            HangulChar(
-                'ㄷ', "ㅏ", "ㄹ"
-            ) to HangulChar(
-                'ㄱ', "ㅡ", "ㄹ"
-            ),
+            HangulChar('ㄷ', "ㅏ", "ㄹ") to HangulChar('ㄱ', "ㅡ", "ㄹ"),
             transform13And14th(current, next)
         )
     }
