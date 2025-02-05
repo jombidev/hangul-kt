@@ -1,5 +1,8 @@
 package dev.jombi.hangulkt
 
+import dev.jombi.hangulkt.hangul.HangulChar
+
+public fun combineCharacter(char: HangulChar): Char = combineCharacter(char.choseong, char.jungseong, char.jongseong)
 public fun combineCharacter(choseong: Char, jungseong: String, jongseong: String = ""): Char {
     if (!canBeChoseong(choseong) || !canBeJungseong(jungseong) || !canBeJongseong(jongseong)) {
         throw AssertionError("Invalid hangul Characters: $choseong, $jungseong, $jongseong")
