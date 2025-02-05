@@ -12,4 +12,9 @@ class DisassembleTests {
         assertEquals("ㄴㅈ", disassemble("ㄵ"))
         assertEquals("ㅗㅏ", disassemble("ㅘ"))
     }
+    
+    @Test
+    fun `빈값이 들어올 경우 그대로 반환한다`() {
+        assertEquals("", disassemble(""))
+    }
 }
