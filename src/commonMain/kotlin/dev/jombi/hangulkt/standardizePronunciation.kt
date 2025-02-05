@@ -4,6 +4,14 @@ import dev.jombi.hangulkt.hangul.HangulChar
 import dev.jombi.hangulkt.hangul.toMutable
 import dev.jombi.hangulkt.pronunciation.*
 
+
+/**
+ * 주어진 한글 문자열을 표준 발음으로 변환합니다.
+ *
+ * @param hangul 한글 문자열을 입력합니다.
+ * @param shouldHardConversion 경음화 등의 된소리를 적용할지 여부를 설정합니다. 기본값은 true입니다.
+ * @return 변환된 표준 발음 문자열을 반환합니다.
+ */
 public fun standardizePronunciation(hangul: String, shouldHardConversion: Boolean = true): String {
     if (hangul.isEmpty() || hangul.isBlank()) return ""
 

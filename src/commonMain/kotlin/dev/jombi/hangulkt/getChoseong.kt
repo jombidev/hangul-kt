@@ -3,7 +3,12 @@ package dev.jombi.hangulkt
 import doist.x.normalize.Form
 import doist.x.normalize.normalize
 
-
+/**
+ * 단어에서 초성을 추출합니다. (예: `사과` -> `'ㅅㄱ'`)
+ * 
+ * @param word 초성을 추출할 단어
+ * @return 추출된 초성
+ */
 public fun getChoseong(word: String): String {
     return word.normalize(Form.NFD)
         .replace(EXTRACT_CHOSEONG_REGEX, "") // NFD ㄱ-ㅎ, NFC ㄱ-ㅎ 외 문자 삭제

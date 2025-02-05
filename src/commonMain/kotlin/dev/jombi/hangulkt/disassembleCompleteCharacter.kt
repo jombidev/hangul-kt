@@ -2,6 +2,13 @@ package dev.jombi.hangulkt
 
 import dev.jombi.hangulkt.hangul.HangulChar
 
+/**
+ * 완전한 한글 문자열을 초성, 중성, 종성으로 분리합니다.
+ * 완전한 한글이 아닐 경우, null을 반환합니다.
+ *
+ * @param letter 분리하고자 하는 완전한 한글 문자열
+ * @return 한글 객체
+ */
 public fun disassembleCompleteCharacter(letter: Char): HangulChar? {
     val charCode = letter.code
 

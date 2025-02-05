@@ -1,13 +1,25 @@
 package dev.jombi.hangulkt
 
+/**
+ * 인자로 주어진 한글 문자열에서 가장 마지막 문자 하나를 제거합니다.
+ *
+ * @param words 한글 문자열
+ * @return 마지막 문자가 지워진 한글 문자열
+ */
 public fun removeLastCharacter(words: String): String {
     val lastCharacter = words.lastOrNull() ?: return ""
 
     val result = removeLastCharacter(lastCharacter)
-    
+
     return words.dropLast(1) + (result ?: "")
 }
 
+/**
+ * 인자로 주어진 문자에서 가장 마지막 문자 하나를 제거합니다.
+ *
+ * @param words 한글 한글자
+ * @return 마지막 문자가 지워진 한글 문자열
+ */
 public fun removeLastCharacter(words: Char): Char? {
     val disassembleLastCharacter = disassembleToGroup(words)
     val dropped = disassembleLastCharacter.dropLast(1)

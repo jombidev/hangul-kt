@@ -55,6 +55,12 @@ private val QWERTY_KEYBOARD_MAP = mapOf(
     'M' to 'ㅡ',
 )
 
+/**
+ * 영어 알파벳을 qwerty 자판과 매칭되는 한글 음소로 변환합니다.
+ * 
+ * @param word 한글 음소로 변환하고자 하는 영문
+ * @return 영어 알파벳이 포함되지 않은 한글 음소, 음절, 기타 문자로 이루어진 문자열
+ */
 public fun convertQwertyToAlphabet(word: String): String {
     return word.map { if (it in QWERTY_KEYBOARD_MAP) QWERTY_KEYBOARD_MAP[it] else it }.joinToString("")
 }
