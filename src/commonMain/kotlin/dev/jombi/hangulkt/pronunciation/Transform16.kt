@@ -23,7 +23,7 @@ public object Transform16 : ITransformer {
         val 제16항주요조건 = currentSyllable.hasJongseong() && nextSyllable.choseong == PronounConstants.음가가_없는_자음
 
         if (제16항주요조건) {
-            val combinedSyllables = "${phrase[index - 1]}${phrase[index]}"
+            val combinedSyllables = "${phrase.getOrNull(index - 1)}${phrase[index]}"
 
             handleSpecialHangulCharacters(currentSyllable, nextSyllable, combinedSyllables)
             handleHangulCharacters(currentSyllable, nextSyllable, combinedSyllables)
