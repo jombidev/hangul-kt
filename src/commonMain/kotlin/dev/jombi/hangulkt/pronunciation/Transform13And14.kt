@@ -1,6 +1,5 @@
 package dev.jombi.hangulkt.pronunciation
 
-import dev.jombi.hangulkt.Constants
 import dev.jombi.hangulkt.hangul.HangulChar
 import dev.jombi.hangulkt.hangul.MutableHangulChar
 
@@ -41,7 +40,7 @@ public object Transform13And14 : ITransformer {
 
     private fun handle홑받침or쌍받침(current: MutableHangulChar, next: MutableHangulChar) {
         if (current.jongseong !in ㅇ_OR_NO_JONGSEONG && (is홑받침(current.value) || is쌍받침(current.value))) {
-            next.choseong = Constants.ASSEMBLED_CONSONANT_BY_DISASSEMBLED_CONSONANTS[current.jongseong]!!
+            next.choseong = current.jongseong[0]
             current.jongseong = ""
         }
     }

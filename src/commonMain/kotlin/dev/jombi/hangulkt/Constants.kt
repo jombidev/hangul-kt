@@ -49,11 +49,6 @@ public object Constants {
         'ㅎ' to "ㅎ",
     )
 
-    public val ASSEMBLED_CONSONANT_BY_DISASSEMBLED_CONSONANTS: Map<String, Char> =
-        DISASSEMBLED_CONSONANTS_BY_CONSONANT
-            .map { it.value to it.key }
-            .toMap()
-
     public val DISASSEMBLED_VOWELS_BY_VOWEL: Map<Char, String> = mapOf(
         'ㅏ' to "ㅏ",
         'ㅐ' to "ㅐ",
