@@ -24,6 +24,12 @@ class CombineCharacterTests {
     }
     
     @Test
+    fun `hangul-kt - 중성 또는 종성을 조합된 문자로 넣을 경우에도 조합한다`() {
+        assertEquals('뷁', combineCharacter('ㅂ', 'ㅞ', 'ㄺ'))
+        assertEquals('뭐', combineCharacter('ㅁ', 'ㅝ'))
+    }
+    
+    @Test
     fun `초성이 될 수 없는 문자가 초성으로 입력되면 에러를 반환한다`() {
         assertFailsWith<AssertionError> {
             combineCharacter('ㅏ', 'ㅏ', 'ㄱ')
